@@ -1,0 +1,58 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+useroption=int(input("Type 0 for rock, 1 for paper or 2 for scissors."))
+if useroption==0:
+  print(rock)
+elif useroption==1:
+  print(paper)
+else:
+  print(scissors)
+print(f"computer chose:")
+cel=random.randint(0,2)
+if cel==0:
+  print(rock)
+elif cel==1:
+  print(paper)
+else:
+  print(scissors)
+if useroption>=3 or useroption<0:
+  print("You chose an invalid number. You lose.")
+elif useroption==0 and cel==2:
+  print("You win!")
+elif cel==0 and useroption==2:
+  print("You lose")
+elif cel>useroption:
+  print("You lose")
+elif cel<useroption:
+  print("You win!")
+elif cel==useroption:
+  print("It's a draw")
+else:
+  print("You typed an invalid number, you lose")
